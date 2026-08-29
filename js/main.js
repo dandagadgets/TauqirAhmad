@@ -2,6 +2,49 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('reduce-motion');
 }
 
+// Theme (White / Black)
+(function initTheme() {
+  const STORAGE_KEY = 'theme';
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('.theme-toggle__opt');
+
+  function getStored() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function apply(theme) {
+    if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.setAttribute('data-theme', 'light');
+    }
+    buttons.forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.themeChoice === theme));
+    });
+  }
+
+  function setTheme(theme) {
+    apply(theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {
+      /* storage unavailable, theme still applies for this view */
+    }
+  }
+
+  const stored = getStored();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(stored || (prefersDark ? 'dark' : 'light'));
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => setTheme(btn.dataset.themeChoice));
+  });
+})();
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
