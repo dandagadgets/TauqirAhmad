@@ -700,8 +700,22 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   padding-bottom: 36px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
+.footer__brand { display: flex; flex-direction: column; gap: 16px; }
 .footer__mark { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem; color: #fff; }
 .footer__mark span { color: #fff; font-weight: 700; }
+.footer__social { display: flex; gap: 10px; }
+.footer__social-link {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.footer__social-link svg { width: 16px; height: 16px; }
+.footer__social-link:hover { background: var(--teal); color: var(--on-teal); transform: translateY(-2px); }
 .footer__cols { display: flex; gap: 56px; flex-wrap: wrap; }
 .footer__col { display: flex; flex-direction: column; gap: 10px; }
 .footer__col h3 { color: #fff; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
