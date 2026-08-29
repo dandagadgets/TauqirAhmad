@@ -506,12 +506,7 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   width: 96px; height: 96px;
   margin: 0 auto 20px;
   border-radius: 50%;
-  background: var(--navy);
-  display: grid;
-  place-items: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  object-fit: cover;
   border: 4px solid rgba(255,255,255,0.2);
 }
 .doctor-card__name { font-family: 'Poppins', sans-serif; font-weight: 600; color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
