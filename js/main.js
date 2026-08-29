@@ -9,7 +9,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   const MAX_TILT = 7; // degrees
   const els = document.querySelectorAll(
-    '.qual, .test, .step, .mode, .clinic-card, .review-card, .doctor-card, .gauge-card, .social__card, .hstat, .chip, .badge'
+    '.qual, .test, .step, .clinic-card, .review-card, .doctor-card, .gauge-card, .social__card, .hstat, .chip, .badge'
   );
 
   els.forEach((el) => {
