@@ -338,7 +338,55 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   height: 100%;
   object-fit: cover;
 }
+.hero__portrait-caption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.hero__portrait-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,168,150,0.28);
+  flex-shrink: 0;
+}
+.hero__photo-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 14, 20, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.8);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+}
+.hero__photo-chip strong { display: block; font-size: 0.84rem; color: var(--teal); }
+.hero__photo-chip-icon {
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  background: rgba(0,168,150,0.18);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--teal);
+}
+.hero__photo-chip-icon svg { width: 15px; height: 15px; }
+.hero__photo-chip--top { top: 18px; left: -16px; }
+.hero__photo-chip--bottom { bottom: 18px; right: -16px; }
 
+.hero__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
 .badge {
   display: inline-flex;
   align-items: center;
@@ -350,9 +398,9 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   font-size: 0.82rem;
   padding: 7px 16px;
   border-radius: 999px;
-  margin-bottom: 26px;
   backdrop-filter: blur(6px);
 }
+.badge--muted { color: rgba(255,255,255,0.78); }
 .badge svg { width: 16px; height: 16px; }
 
 .hero__title {
