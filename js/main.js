@@ -73,7 +73,11 @@ function animateCount(el) {
   const duration = 1200;
 
   if (document.documentElement.classList.contains('reduce-motion')) {
-    el.textContent = prefix + target.toFixed(decimals) + suffix;
+    const value = target.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+    el.textContent = prefix + value + suffix;
     return;
   }
 
@@ -82,7 +86,11 @@ function animateCount(el) {
     if (!startTime) startTime = ts;
     const progress = Math.min((ts - startTime) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+    const value = (target * eased).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+    el.textContent = prefix + value + suffix;
     if (progress < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
