@@ -260,7 +260,73 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
 .pulse-line { width: 100%; height: 100%; color: var(--teal); }
 .pulse-path { stroke-dasharray: 8 12; animation: pulseDash 3.2s linear infinite; }
 @keyframes pulseDash { to { stroke-dashoffset: -200; } }
-.hero__content { position: relative; max-width: var(--maxw); margin: 0 auto; }
+.hero__grid {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+.hero__content { position: relative; min-width: 0; }
+
+.hero__visual { display: none; }
+@media (min-width: 1020px) {
+  .hero__grid { grid-template-columns: minmax(0, 620px) 1fr; }
+  .hero__visual {
+    display: block;
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 4 / 5;
+  }
+}
+.hero__portrait {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(0,168,150,0.16), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.14);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+.hero__portrait::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 50% 28%, rgba(0,168,150,0.32), transparent 62%);
+  filter: blur(6px);
+}
+.hero__portrait svg {
+  position: relative;
+  width: 34%;
+  height: 34%;
+  color: rgba(255,255,255,0.42);
+}
+.hero__float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  color: var(--navy-deep, #12151a);
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.3);
+}
+.hero__float-card span { font-weight: 500; color: rgba(18,21,26,0.55); }
+.hero__float-card svg { width: 16px; height: 16px; flex-shrink: 0; color: #f0a93a; }
+.hero__float-card--bottom svg { color: var(--teal); }
+.hero__float-card--top { top: -6%; right: 4%; }
+.hero__float-card--bottom { bottom: -6%; left: 2%; }
 
 .badge {
   display: inline-flex;
