@@ -2,6 +2,47 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('reduce-motion');
 }
 
+// Subtle 3D hover tilt on card tiles (fine-pointer devices only, respects reduced motion)
+(function initTilt() {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!canHover || document.documentElement.classList.contains('reduce-motion')) return;
+
+  const MAX_TILT = 7; // degrees
+  const els = document.querySelectorAll(
+    '.qual, .test, .step, .mode, .clinic-card, .review-card, .doctor-card, .gauge-card, .social__card'
+  );
+
+  els.forEach((el) => {
+    let frame = null;
+
+    el.addEventListener('mouseenter', () => {
+      el.style.transition = 'none';
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        const rect = el.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = (-py * MAX_TILT).toFixed(2);
+        const rotateY = (px * MAX_TILT).toFixed(2);
+        el.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        frame = null;
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      if (frame) {
+        cancelAnimationFrame(frame);
+        frame = null;
+      }
+      el.style.transition = '';
+      el.style.transform = '';
+    });
+  });
+})();
+
 // Theme (White / Black)
 (function initTheme() {
   const STORAGE_KEY = 'theme';
