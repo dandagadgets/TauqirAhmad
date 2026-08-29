@@ -688,6 +688,41 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   max-width: 640px;
 }
 
+/* SOCIAL */
+.social__intro { max-width: 640px; margin-bottom: 30px; }
+.social__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+.social__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.social__card:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(15, 47, 76, 0.15); }
+.social__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--navy);
+  transition: background-color 0.3s ease;
+}
+.social__icon svg { width: 24px; height: 24px; }
+
 /* FOOTER */
 .footer { background: var(--chrome); color: rgba(255,255,255,0.85); padding: 60px 24px 24px; margin-top: 40px; transition: background-color 0.3s ease; }
 .footer__top {
@@ -700,22 +735,8 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   padding-bottom: 36px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.footer__brand { display: flex; flex-direction: column; gap: 16px; }
 .footer__mark { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem; color: #fff; }
 .footer__mark span { color: #fff; font-weight: 700; }
-.footer__social { display: flex; gap: 10px; }
-.footer__social-link {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.footer__social-link svg { width: 16px; height: 16px; }
-.footer__social-link:hover { background: var(--teal); color: var(--on-teal); transform: translateY(-2px); }
 .footer__cols { display: flex; gap: 56px; flex-wrap: wrap; }
 .footer__col { display: flex; flex-direction: column; gap: 10px; }
 .footer__col h3 { color: #fff; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
