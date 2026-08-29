@@ -313,7 +313,7 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
     position: relative;
     justify-self: center;
     width: 100%;
-    max-width: 320px;
+    max-width: 400px;
     aspect-ratio: 4 / 5;
   }
 }
