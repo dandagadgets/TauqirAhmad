@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6e64'/%3E%3Cpath d='M50 22v56M22 50h56' stroke='%23ffffff' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -50,12 +50,28 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M9 12.5l2 2 4.5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/></svg>
         PMDC Verified
       </div>
-      <h1 class="hero__title" data-reveal>Dr. Tauqir Ahmad</h1>
+
+      <h1 class="hero__title" data-reveal>
+        <span class="hero__title-line1">Dr. Tauqir</span><br>
+        <span class="hero__title-line2">Ahmad</span>
+      </h1>
+
       <p class="hero__specialty" data-reveal>
         Internal Medicine Specialist, Diabetologist
         <span class="hero__specialty-ur" dir="rtl" lang="ur">انٹرنل میڈیسن اسپیشلسٹ، ذیابیطس کے ماہر</span>
       </p>
-      <p class="hero__creds" data-reveal>MBBS &middot; FCPS Medicine &middot; Certified in Diabetes &middot; Assistant Professor</p>
+      <p class="hero__creds" data-reveal>MBBS &middot; FCPS Medicine &middot; Certified in Diabetes</p>
+
+      <div class="hero__details" data-reveal>
+        <div class="hero__detail">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 10.5V16c0 1.3 2.7 3 6 3s6-1.7 6-3v-5.5" stroke="currentColor" stroke-width="1.7"/></svg>
+          Assistant Professor of Medicine
+        </div>
+        <div class="hero__detail">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+          Ayub Teaching Hospital, Mandian, Abbottabad
+        </div>
+      </div>
 
       <div class="hero__stats" data-reveal>
         <div class="hstat"><span class="hstat__num" data-count="15">0</span><span class="hstat__label">Yrs Experience</span></div>
