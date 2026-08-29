@@ -836,3 +836,10 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   section { padding: 64px 20px; }
   .rbar { grid-template-columns: 110px 1fr 34px; gap: 8px; }
 }
+
+/* CURSOR */
+/* !important needed: overrides the pointer/text cursors several
+   elements (buttons, inputs, links) already set explicitly. */
+* {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHRleHQgeD0iMSIgeT0iMjYiIGZvbnQtc2l6ZT0iMjYiPuKdpO+4jzwvdGV4dD48L3N2Zz4=') 12 12, auto !important;
+}
