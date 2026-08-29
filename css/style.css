@@ -260,6 +260,23 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
 .pulse-line { width: 100%; height: 100%; color: var(--teal); }
 .pulse-path { stroke-dasharray: 8 12; animation: pulseDash 3.2s linear infinite; }
 @keyframes pulseDash { to { stroke-dashoffset: -200; } }
+
+.heartbeat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  14% { transform: scale(1.4); opacity: 1; }
+  28% { transform: scale(1); opacity: 0.8; }
+  42% { transform: scale(1.4); opacity: 1; }
+  70% { transform: scale(1); opacity: 0.8; }
+}
+.reduce-motion .heartbeat-dot { animation: none; }
 .hero__content { position: relative; max-width: var(--maxw); margin: 0 auto; }
 
 .badge {
