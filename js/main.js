@@ -9,7 +9,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   const MAX_TILT = 7; // degrees
   const els = document.querySelectorAll(
-    '.qual, .test, .step, .mode, .clinic-card, .review-card, .doctor-card, .gauge-card, .social__card'
+    '.qual, .test, .step, .mode, .clinic-card, .review-card, .doctor-card, .gauge-card, .social__card, .hstat, .chip, .badge'
   );
 
   els.forEach((el) => {
@@ -41,6 +41,39 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       el.style.transform = '';
     });
   });
+})();
+
+// Scroll-linked parallax depth: background dots and decorative blobs
+// drift at different speeds than the page content, so scrolling itself
+// reads as moving through layers rather than a flat 2D page.
+(function initParallax() {
+  if (document.documentElement.classList.contains('reduce-motion')) return;
+
+  const blobs = document.querySelectorAll('.blob');
+  let ticking = false;
+
+  function update() {
+    const y = window.scrollY;
+    document.body.style.setProperty('--dots-parallax', (y * 0.12).toFixed(1) + 'px');
+    blobs.forEach((el, i) => {
+      const speed = 0.06 + (i % 3) * 0.025;
+      el.style.transform = `translateY(${(y * speed).toFixed(1)}px)`;
+    });
+    ticking = false;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  update();
 })();
 
 // Theme (White / Black)
