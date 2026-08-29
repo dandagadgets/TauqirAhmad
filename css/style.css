@@ -267,14 +267,13 @@ section h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 18px; max-wid
   border-radius: 50%;
   background: currentColor;
   flex-shrink: 0;
-  animation: heartbeat 1.8s ease-in-out infinite;
+  animation: heartbeat 1.1s ease-in-out infinite;
 }
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); opacity: 0.8; }
-  14% { transform: scale(1.4); opacity: 1; }
-  28% { transform: scale(1); opacity: 0.8; }
-  42% { transform: scale(1.4); opacity: 1; }
-  70% { transform: scale(1); opacity: 0.8; }
+  25% { transform: scale(1.4); opacity: 1; }
+  50% { transform: scale(1); opacity: 0.8; }
+  75% { transform: scale(1.4); opacity: 1; }
 }
 .reduce-motion .heartbeat-dot { animation: none; }
 .hero__content { position: relative; max-width: var(--maxw); margin: 0 auto; }
