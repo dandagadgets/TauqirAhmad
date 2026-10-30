@@ -8,8 +8,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f6e64'/%3E%3Cpath d='M50 22v56M22 50h56' stroke='%23ffffff' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=13">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=14">
 <script>
   (function () {
     try {
@@ -23,6 +23,13 @@
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
+
+<a href="#stroke-day" class="announce">
+  <span class="announce__dot" aria-hidden="true"></span>
+  <span class="announce__en"><strong>World Stroke Day</strong> &middot; Know the signs &mdash; BE FAST</span>
+  <span class="announce__ur" dir="rtl" lang="ur">فالج کی علامات پہچانیں</span>
+  <span class="announce__more">Learn more &rarr;</span>
+</a>
 
 <nav id="nav" class="nav">
   <a href="#hero" class="nav__mark">
@@ -144,6 +151,43 @@
     </div>
     </div>
     <div class="hero__scroll" aria-hidden="true"><span></span>Scroll</div>
+  </section>
+
+  <!-- WORLD STROKE DAY -->
+  <section id="stroke-day" class="stroke">
+    <div class="stroke__grid">
+      <div class="stroke__content">
+        <span class="eyebrow stroke__eyebrow" data-reveal><span class="announce__dot" aria-hidden="true"></span>World Stroke Day &middot; 29 October</span>
+        <h2 data-reveal>Every minute counts. Know the signs of stroke.</h2>
+        <p class="stroke__ur stroke__ur--lead" dir="rtl" lang="ur" data-reveal>ہر منٹ قیمتی ہے — فالج کی علامات پہچانیں اور فوراً ہسپتال پہنچیں۔</p>
+
+        <div class="stroke__fast" data-reveal>
+          <div class="fast"><span class="fast__letter">B</span><div><h3>Balance</h3><p>Sudden dizziness or loss of balance</p><p class="stroke__ur" dir="rtl" lang="ur">اچانک چکر یا لڑکھڑاہٹ</p></div></div>
+          <div class="fast"><span class="fast__letter">E</span><div><h3>Eyes</h3><p>Sudden blurred, double or lost vision</p><p class="stroke__ur" dir="rtl" lang="ur">اچانک دھندلا یا دوہرا نظر آنا</p></div></div>
+          <div class="fast"><span class="fast__letter">F</span><div><h3>Face</h3><p>One side of the face droops</p><p class="stroke__ur" dir="rtl" lang="ur">چہرہ ایک طرف ٹیڑھا ہو جانا</p></div></div>
+          <div class="fast"><span class="fast__letter">A</span><div><h3>Arm</h3><p>Weakness or numbness on one side</p><p class="stroke__ur" dir="rtl" lang="ur">ایک طرف کمزوری یا سُن پن</p></div></div>
+          <div class="fast"><span class="fast__letter">S</span><div><h3>Speech</h3><p>Slurred speech or trouble understanding</p><p class="stroke__ur" dir="rtl" lang="ur">بات کرنے میں دشواری</p></div></div>
+          <div class="fast fast--time"><span class="fast__letter">T</span><div><h3>Time</h3><p>Call 1122 &mdash; don&rsquo;t wait</p><p class="stroke__ur" dir="rtl" lang="ur">ایک منٹ بھی ضائع نہ کریں</p></div></div>
+        </div>
+
+        <p class="stroke__note" data-reveal>Reaching a hospital with a CT scanner within the first <strong>4.5 hours</strong> can greatly reduce disability. Note the time symptoms started, give nothing by mouth, and don&rsquo;t give aspirin before a scan.</p>
+
+        <div class="stroke__actions" data-reveal>
+          <a href="tel:1122" class="btn stroke__call">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4.5c-1 0-2 1-2 2 0 6.6 6.4 13 13 13 1 0 2-1 2-2v-2.2c0-.5-.3-.9-.8-1l-3-1c-.4-.1-.9 0-1.2.3l-1 1c-2-1-3.6-2.6-4.6-4.6l1-1c.3-.3.4-.8.3-1.2l-1-3c-.1-.5-.5-.8-1-.8H6.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Emergency: Call 1122
+          </a>
+          <a href="images/world-stroke-day-ur.png" download class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download &amp; share poster
+          </a>
+        </div>
+      </div>
+
+      <a href="images/world-stroke-day-ur.png" class="stroke__poster" data-reveal aria-label="Open the World Stroke Day poster in Urdu">
+        <img src="images/world-stroke-day-ur.png" alt="Urdu World Stroke Day poster by Dr. Tauqir Ahmad showing the BE FAST signs of stroke and the advice to call 1122 immediately" width="1080" height="1350" loading="lazy">
+      </a>
+    </div>
   </section>
 
   <!-- REVIEWS / TRUST -->
